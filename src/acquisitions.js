@@ -1,6 +1,6 @@
-import Chart from 'chart.js/auto'
+import Chart from "chart.js/auto";
 
-(async function() {
+(async function () {
   const data = [
     { year: 2010, count: 10 },
     { year: 2011, count: 20 },
@@ -11,19 +11,21 @@ import Chart from 'chart.js/auto'
     { year: 2016, count: 28 },
   ];
 
-  new Chart(
-    document.getElementById('acquisitions'),
-    {
-      type: 'bar',
-      data: {
-        labels: data.map(row => row.year),
-        datasets: [
-          {
-            label: 'Acquisitions by year',
-            data: data.map(row => row.count)
-          }
-        ]
-      }
-    }
-  );
+  new Chart(document.getElementById("acquisitions"), {
+    type: "doughnut",
+    data: {
+      labels: data.map((row) => row.year),
+      datasets: [
+        {
+          label: "Acquisitions by year",
+          data: data.map((row) => row.count),
+        },
+      ],
+    },
+    options: {
+      cutout: "90%",
+      circumference: 180,
+      rotation: -90,
+    },
+  });
 })();

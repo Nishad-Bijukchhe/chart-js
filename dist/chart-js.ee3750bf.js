@@ -701,16 +701,21 @@ var _autoDefault = parcelHelpers.interopDefault(_auto);
             count: 28
         }
     ];
-    new (0, _autoDefault.default)(document.getElementById('acquisitions'), {
-        type: 'bar',
+    new (0, _autoDefault.default)(document.getElementById("acquisitions"), {
+        type: "doughnut",
         data: {
             labels: data.map((row)=>row.year),
             datasets: [
                 {
-                    label: 'Acquisitions by year',
+                    label: "Acquisitions by year",
                     data: data.map((row)=>row.count)
                 }
             ]
+        },
+        options: {
+            cutout: "90%",
+            circumference: 180,
+            rotation: -90
         }
     });
 })();
